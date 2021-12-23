@@ -12,7 +12,6 @@
 //   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 
 const router = require('./router')
 

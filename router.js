@@ -1,12 +1,9 @@
-const express = require('express');
-const topics = require('./controllers/topics');
+import express from "express";
+import message from "./controllers/message";
 
 const router = express.Router();
 
-router.get('/', topics.getAll);
-router.post('/', topics.postOne);
-router.put('/upvote', topics.putUpvote);
-router.put('/downvote', topics.putDownvote);
-router.delete('/', topics.delete);
+router.get('/messages', message.getAll);
+router.post('/messages', message.postOne);
 
-module.exports = router;
+export default router;
