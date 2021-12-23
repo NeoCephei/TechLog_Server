@@ -1,5 +1,5 @@
-import express from "express";
-import message from "./controllers/message";
+const express = require("express");
+const message = require("./controllers/message");
 
 const router = express.Router();
 
