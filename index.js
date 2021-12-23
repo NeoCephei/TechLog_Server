@@ -10,12 +10,11 @@
 //   .get('/', (req, res) => res.render('pages/index'))
 //   .get('/cool', (req, res) => res.send(cool()))
 //   .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-import router from './router'
-
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+
+const router = require('./router')
 
 const PORT = process.env.PORT || 5000;
 
