@@ -1,15 +1,12 @@
-import express from 'express';
+const express = require('express');
+const topics = require('./controllers/topics');
 
 const router = express.Router();
 
-router.route('/')
-  .get((_, res) => {
-    res.json(require('./config/db.json'));
-  })
+router.get('/', topics.getAll);
+router.post('/', topics.postOne);
+router.put('/upvote', topics.putUpvote);
+router.put('/downvote', topics.putDownvote);
+router.delete('/', topics.delete);
 
-// router.get("", );
-// router.post("", );
-// router.put("", );
-// router.delete("", );
-
-export default router;
+module.exports = router;
