@@ -39,9 +39,7 @@ const postQuestion = async (req, res) => {
 };
 
 module.exports = {
-  questionController : {
-    greeting,
-    getQuestions,
-    postQuestion
-  }
+  greeting,
+  getQuestions,
+  postQuestion
 };
