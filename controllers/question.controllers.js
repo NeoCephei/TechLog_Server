@@ -38,8 +38,10 @@ const postQuestion = async (req, res) => {
   }
 };
 
-export default {
-  greeting,
-  getQuestions,
-  postQuestion
+module.exports = {
+  questionController : {
+    greeting,
+    getQuestions,
+    postQuestion
+  }
 };
