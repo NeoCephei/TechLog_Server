@@ -8,4 +8,4 @@ const QuestionSchema = new Schema({
   wrong: { type: [String], required: true}
 });
 
-module.exports = mongoose.model("TechLog", QuestionSchema);
+module.exports = mongoose.model("questions", QuestionSchema);

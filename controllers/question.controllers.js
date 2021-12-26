@@ -1,4 +1,4 @@
-const TechLog = require('../models/question.model');
+const questions = require('../models/question.model');
 
 const greeting = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ const greeting = async (req, res) => {
 
 const getQuestions = async (req, res) => {
   try {
-    const questions = await TechLog.find();
+    const questions = await questions.find();
     res.status(200).send(questions);
   } catch (error) {
     console.log(error);
@@ -25,7 +25,7 @@ const getQuestions = async (req, res) => {
 const postQuestion = async (req, res) => {
   try {
     const { description, image, correct, wrong } = req.body;
-    const question = await TechLog.create({
+    const question = await questions.create({
       description,
       image,
       correct,
