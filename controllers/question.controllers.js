@@ -4,7 +4,7 @@ const greeting = async (req, res) => {
   try {
     res
     .status(200)
-    .send('Hello server is running with the controllers done')
+    .send('Hello server is running expect db')
     .end();
   } catch (error) {
     console.log(error);
