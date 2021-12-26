@@ -14,8 +14,8 @@ const greeting = async (req, res) => {
 
 const getQuestions = async (req, res) => {
   try {
-    const questions = await questions.find();
-    res.status(200).send(questions);
+    const dbQuestion = await dbQuestion.find();
+    res.status(200).send(dbQuestion);
   } catch (error) {
     console.log(error);
     res.status(500);
