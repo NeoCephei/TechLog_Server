@@ -1,6 +1,6 @@
-const db = require('../models/question.model');
+const TechLog = require('../models/question.model');
 
-const sendMessage = async (req, res) => {
+const greeting = async (req, res) => {
   try {
     res
     .status(200)
@@ -12,13 +12,34 @@ const sendMessage = async (req, res) => {
   }
 }
 
-const getQuestion = async (req, res) => {
+const getQuestions = async (req, res) => {
   try {
+    const questions = await TechLog.find();
+    res.status(200).send(questions);
   } catch (error) {
+    console.log(error);
+    res.status(500);
+  }
+};
+
+const postQuestion = async (req, res) => {
+  try {
+    const { description, image, correct, wrong } = req.body;
+    const question = await TechLog.create({
+      description,
+      image,
+      correct,
+      wrong,
+    });
+    res.status(201).send(question);
+  } catch (error) {
+    console.log(error);
+    res.status(500);
   }
 };
 
 module.exports = {
-  sendMessage,
-  getQuestion,
+  greeting,
+  getQuestions,
+  postQuestion
 };
