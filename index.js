@@ -1,5 +1,4 @@
 // const express = require('express');
-// const cors = require('cors');
 
 // // const router = require('./router')
 
@@ -14,26 +13,34 @@
 //   // .use(router)
 
 // (async function () {
-//   try {
-//     app.listen(PORT, () => console.log('Server running on port ' + PORT));
-//   } catch (err) {
-//     console.error(err);
-//   }
-// })()
-
+  //   try {
+    //     app.listen(PORT, () => console.log('Server running on port ' + PORT));
+    //   } catch (err) {
+      //     console.error(err);
+      //   }
+      // })()
+      
 const express = require('express');
-const app = express();
+const cors = require('cors');
 
-app.get('/', (req, res) => {
-  res
-    .status(200)
-    .send('Hello server is running')
-    .end();
+const router = require("./router");
+
+const app = express();
+const PORT = process.env.PORT || 8080;
+
+app
+  .use(cors())
+  .use(express.json())
+  .use(router)
+  .get('/', (req, res) => {
+    res
+      .status(200)
+      .send('Hello server is running')
+      .end();
 });
 
 // Start the server
-const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
+  console.log('Type "heroku ps:scale web=0" to quit.');
 });
