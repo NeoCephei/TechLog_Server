@@ -31,13 +31,7 @@ const PORT = process.env.PORT || 8080;
 app
   .use(cors())
   .use(express.json())
-  .use(router)
-  .get('/', (req, res) => {
-    res
-      .status(200)
-      .send('Hello server is running')
-      .end();
-});
+  .use(router);
 
 // Start the server
 app.listen(PORT, () => {
