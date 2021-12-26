@@ -38,7 +38,7 @@ const postQuestion = async (req, res) => {
   }
 };
 
-module.exports = {
+export default {
   greeting,
   getQuestions,
   postQuestion
