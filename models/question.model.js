@@ -5,7 +5,8 @@ const QuestionSchema = new Schema({
   description: { type: String, required: true},
   image: { type: String, required: true},
   correct: { type: String, required: true},
-  wrong: { type: [String], required: true}
+  wrong: { type: [String], required: true},
+  explanation: { type: String, required: true},
 });
 
 module.exports = mongoose.model("questions", QuestionSchema);

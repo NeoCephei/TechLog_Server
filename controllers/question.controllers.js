@@ -24,12 +24,13 @@ const getQuestions = async (req, res) => {
 
 const postQuestion = async (req, res) => {
   try {
-    const { description, image, correct, wrong } = req.body;
+    const { description, image, correct, wrong, explanation } = req.body;
     const question = await questions.create({
       description,
       image,
       correct,
       wrong,
+      explanation
     });
     res.status(201).send(question);
   } catch (error) {
